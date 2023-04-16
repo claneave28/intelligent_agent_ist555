@@ -1,4 +1,4 @@
-import random
+import statistics
 
 
 class Calculations(object):
@@ -33,6 +33,10 @@ class Calculations(object):
         self._calculated_results['cost_of_storage'] = self.determine_cost_of_storage()
         self._calculated_results['units_sold_value'] = self.determine_units_value_sold()
         self._calculated_results['determine_cost_missed_sale'] = self.determine_cost_of_missed_sales()
+        self._calculated_results['total_losses'] = self.determine_total_lost_revenue()
+        self._calculated_results['avg_customer_demand'] = self.determine_average_customer_order()
+        self._calculated_results['avg_store_inventory'] = self.determine_average_onhand_inventory()
+        self._calculated_results['overall profit'] = self.determine_total_profit()
         return self._calculated_results
 
     def determine_units_value_sold(self):
@@ -55,13 +59,14 @@ class Calculations(object):
         return total_cost
 
     def determine_total_lost_revenue(self):
-        print("asdfasdf")
+        return self._calculated_results['determine_cost_missed_sale'] + self._calculated_results['cost_of_storage']
 
     def determine_total_profit(self):
-        print("asdfasdf")
+        return self._calculated_results['units_sold_value'] - self._calculated_results['total_losses']
 
     def determine_average_customer_order(self):
-        print("asdf")
+        return round(statistics.mean(self._customer_demand), 2)
+
 
     def determine_average_onhand_inventory(self):
-        print("asdf")
+        return round(statistics.mean(self._store_inventory), 2)
