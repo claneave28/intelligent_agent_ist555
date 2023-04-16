@@ -46,18 +46,21 @@ def start_build(days, payload):
                     if key == 'customer_demand':
                         value = random_customer_demand(max_demand)
                     if key == 'starting_store':
-                        value = value - execution_results[day]['customer_demand']
-                        if day % shipping_store_days:
+                        if value > 1:
+                            value = value - execution_results[day]['customer_demand']
+                        if day % shipping_store_days == 0:
                             value += reorder_store_quantity
                             store_order = reorder_store_quantity
                     if key == 'starting_warehouse':
-                        value = value - store_order
-                        if day % shipping_warehouse_days:
+                        if value > 1:
+                            value = value - store_order
+                        if day % shipping_warehouse_days == 0:
                             value += reorder_warehouse_quantity
                             warehouse_order = reorder_warehouse_quantity
                     if key == 'starting_manufacture':
-                        value = value - warehouse_order
-                        if day % manufacturing_days:
+                        if value > 1:
+                            value = value - warehouse_order
+                        if day % manufacturing_days == 0:
                             value += reorder_manufacture_quantity
                     execution_results[day+1].update({key: value})
     print(execution_results)
