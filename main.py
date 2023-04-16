@@ -90,7 +90,7 @@ def build_plot_graph(results):
 
 
 if __name__ == '__main__':
-    days = 15
+    days = 25
     input_value_dict = build_data_payload(True)
     cost_of_delay_per_unit = input_value_dict['cost_delayed']
     cost_of_unit = input_value_dict['cost_unit']

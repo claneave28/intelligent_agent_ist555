@@ -67,6 +67,5 @@ class Calculations(object):
     def determine_average_customer_order(self):
         return round(statistics.mean(self._customer_demand), 2)
 
-
     def determine_average_onhand_inventory(self):
         return round(statistics.mean(self._store_inventory), 2)

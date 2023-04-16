@@ -26,18 +26,18 @@ class DataExecutor(object):
             self.dictionary_of_input_variables['cost_delayed'] += 3
         for shipping_times in self._list_shipping_times:
             if shipping_times == 'store_shipping':
-                self.dictionary_of_input_variables[shipping_times] = self.randomize_input_numeric_value(1, 5)
-            if shipping_times == 'warehouse_shipping':
+                self.dictionary_of_input_variables[shipping_times] = self.randomize_input_numeric_value(3, 5)
+            elif shipping_times == 'warehouse_shipping':
                 self.dictionary_of_input_variables[shipping_times] = self.randomize_input_numeric_value(6, 10)
-            else:
+            elif shipping_times == "manufacturer_shipping":
                 self.dictionary_of_input_variables[shipping_times] = self.randomize_input_numeric_value(11, 15)
         for reorder_values in self._list_of_reorder_values:
             if reorder_values == 'reorder_store_values':
                 self.dictionary_of_input_variables[reorder_values] = self.randomize_input_numeric_value(100,
-                                                                                                        200)
+                                                                                                        150)
             elif reorder_values == 'reorder_warehouse_values':
-                self.dictionary_of_input_variables[reorder_values] = self.randomize_input_numeric_value(200,
-                                                                                                        500)
+                self.dictionary_of_input_variables[reorder_values] = self.randomize_input_numeric_value(500,
+                                                                                                        1000)
             elif reorder_values == 'reorder_manufacture_values':
                 self.dictionary_of_input_variables[reorder_values] = self.randomize_input_numeric_value(1000,
                                                                                                         10000)
