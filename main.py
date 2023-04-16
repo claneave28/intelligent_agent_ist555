@@ -19,7 +19,6 @@ def build_data_payload(payload):
 def start_build(days, payload):
     for day in range(1, days):
         for key, value in payload.items():
-            print(key, value)
             execution_results[day].update({key: value})
     print(execution_results)
 
