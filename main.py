@@ -29,6 +29,8 @@ def start_build(days, payload):
     shipping_store_days = payload['store_shipping']
     shipping_warehouse_days = payload['warehouse_shipping']
     manufacturing_days = payload['manufacturer_shipping']
+    print("Executing testing on variables:\n")
+    print(json.dumps(payload, indent=4, sort_keys=True))
 
     for day in range(1, days):
         store_order = 0

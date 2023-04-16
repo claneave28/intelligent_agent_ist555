@@ -34,20 +34,19 @@ class DataExecutor(object):
             if reorder_values == 'reorder_store_values':
                 self.dictionary_of_input_variables[reorder_values] = self.randomize_input_numeric_value(100,
                                                                                                         200)
-            if reorder_values == 'reorder_warehouse_values':
+            elif reorder_values == 'reorder_warehouse_values':
                 self.dictionary_of_input_variables[reorder_values] = self.randomize_input_numeric_value(200,
                                                                                                         500)
-            else:
+            elif reorder_values == 'reorder_manufacture_values':
                 self.dictionary_of_input_variables[reorder_values] = self.randomize_input_numeric_value(1000,
                                                                                                         10000)
         for starting_inventory in self._list_of_starting_inventory:
             if starting_inventory == 'starting_store':
-                self.dictionary_of_input_variables[starting_inventory] = self.randomize_input_numeric_value(100,
-                                                                                                            200)
-            if starting_inventory == 'starting_warehouse':
+                self.dictionary_of_input_variables[starting_inventory] = self.randomize_input_numeric_value(100,200)
+            elif starting_inventory == 'starting_warehouse':
                 self.dictionary_of_input_variables[starting_inventory] = self.randomize_input_numeric_value(200,
                                                                                                             500)
-            else:
+            elif starting_inventory == 'starting_manufacturer':
                 self.dictionary_of_input_variables[starting_inventory] = self.randomize_input_numeric_value(1000,
                                                                                                             10000)
         for trigger_reorder in self._list_of_inventory_trigger_reorders:
@@ -65,4 +64,4 @@ class DataExecutor(object):
 
     @staticmethod
     def randomize_input_numeric_value(numeric_range_low, numeric_range_high):
-        return random.randint(numeric_range_low, numeric_range_high)
+        return random.randrange(numeric_range_low, numeric_range_high)
