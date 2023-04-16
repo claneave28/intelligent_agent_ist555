@@ -1,14 +1,16 @@
 import random
 
 import numpy as np
-import pandas
+import pandas as pd
 from matplotlib import pyplot as plt
 import json
+
 import global_classes.data_builder as inputs
 import collections
 
 execution_results = collections.defaultdict(dict)
-result_field_headers = ['starting_store','starting_warehouse','starting_manufacturer','customer_demand']
+result_field_headers = ['starting_store', 'starting_warehouse', 'starting_manufacturer', 'customer_demand']
+
 
 def build_data_payload(payload):
     if payload:
@@ -62,8 +64,8 @@ def start_build(days, payload):
                             value = value - warehouse_order
                         if day % manufacturing_days == 0:
                             value += reorder_manufacture_quantity
-                    execution_results[day+1].update({key: value})
-    print(execution_results)
+                    execution_results[day + 1].update({key: value})
+    return execution_results
 
 
 def inventory_processing(inventory, inventory_removed):
@@ -74,6 +76,13 @@ def random_customer_demand(max_demand):
     return random.randint(0, max_demand)
 
 
+def build_plot_graph(results):
+    df = pd.DataFrame(results)
+    return df
+
+
 if __name__ == '__main__':
     input_value_dict = build_data_payload(False)
-    start_build(15, input_value_dict)
+    execution_results = start_build(15, input_value_dict)
+    plot_graph= build_plot_graph(execution_results)
+    print(plot_graph)
