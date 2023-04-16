@@ -19,10 +19,11 @@ class DataExecutor(object):
 
         # Building Out random inputs for each value unless otherwise stated explicitly in the original configuration
         for cost in self._list_cost_of_inventory:
-            self.dictionary_of_input_variables[cost] = self.randomize_input_numeric_value(1, 5)
+            self.dictionary_of_input_variables[cost] = self.randomize_input_numeric_value(1, 3)
         if self.dictionary_of_input_variables['cost_unit'] <= self.dictionary_of_input_variables['cost_delayed'] or \
                 self.dictionary_of_input_variables['cost_unit'] <= self.dictionary_of_input_variables['cost_instock']:
-            self.dictionary_of_input_variables['cost_unit'] += 2
+            self.dictionary_of_input_variables['cost_unit'] += 13
+            self.dictionary_of_input_variables['cost_delayed'] += 3
         for shipping_times in self._list_shipping_times:
             if shipping_times == 'store_shipping':
                 self.dictionary_of_input_variables[shipping_times] = self.randomize_input_numeric_value(1, 5)
@@ -42,7 +43,7 @@ class DataExecutor(object):
                                                                                                         10000)
         for starting_inventory in self._list_of_starting_inventory:
             if starting_inventory == 'starting_store':
-                self.dictionary_of_input_variables[starting_inventory] = self.randomize_input_numeric_value(100,200)
+                self.dictionary_of_input_variables[starting_inventory] = self.randomize_input_numeric_value(300, 600)
             elif starting_inventory == 'starting_warehouse':
                 self.dictionary_of_input_variables[starting_inventory] = self.randomize_input_numeric_value(200,
                                                                                                             500)

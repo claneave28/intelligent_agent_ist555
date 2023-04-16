@@ -40,6 +40,8 @@ def start_build(days, payload):
                         value = random_customer_demand(max_demand)
                     if key == 'starting_store':
                         value = value - max_demand
+                        if value < 1:
+                            value = 0
                     execution_results[day].update({key: value})
         else:
             day = day - 1
@@ -50,6 +52,8 @@ def start_build(days, payload):
                     if key == 'starting_store':
                         if value > 1:
                             value = value - execution_results[day]['customer_demand']
+                        else:
+                            value = 0
                         if day % shipping_store_days == 0:
                             value += reorder_store_quantity
                             store_order = reorder_store_quantity
@@ -64,6 +68,8 @@ def start_build(days, payload):
                             value = value - warehouse_order
                         if day % manufacturing_days == 0:
                             value += reorder_manufacture_quantity
+                    if value < 1:
+                        value = 0
                     execution_results[day + 1].update({key: value})
     return execution_results
 
@@ -85,7 +91,7 @@ def build_plot_graph(results):
 
 if __name__ == '__main__':
     days = 15
-    input_value_dict = build_data_payload(False)
+    input_value_dict = build_data_payload(True)
     cost_of_delay_per_unit = input_value_dict['cost_delayed']
     cost_of_unit = input_value_dict['cost_unit']
     cost_of_instock_storage = input_value_dict['cost_instock']
