@@ -43,7 +43,7 @@ class DataExecutor(object):
                                                                                                         10000)
         for starting_inventory in self._list_of_starting_inventory:
             if starting_inventory == 'starting_store':
-                self.dictionary_of_input_variables[starting_inventory] = self.randomize_input_numeric_value(300, 600)
+                self.dictionary_of_input_variables[starting_inventory] = self.randomize_input_numeric_value(100, 200)
             elif starting_inventory == 'starting_warehouse':
                 self.dictionary_of_input_variables[starting_inventory] = self.randomize_input_numeric_value(200,
                                                                                                             500)
