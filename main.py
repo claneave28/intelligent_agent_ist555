@@ -1,10 +1,8 @@
 import random
-
-import numpy as np
+import global_classes.computations as calculations
 import pandas as pd
 from matplotlib import pyplot as plt
 import json
-
 import global_classes.data_builder as inputs
 import collections
 
@@ -79,12 +77,22 @@ def random_customer_demand(max_demand):
 
 
 def build_plot_graph(results):
-    df = pd.DataFrame(results)
+    df = pd.DataFrame.from_dict(results)
+    plt.plot(df)
+    plt.show()
     return df
 
 
 if __name__ == '__main__':
+    days = 15
     input_value_dict = build_data_payload(False)
-    execution_results = start_build(15, input_value_dict)
-    plot_graph= build_plot_graph(execution_results)
+    cost_of_delay_per_unit = input_value_dict['cost_delayed']
+    cost_of_unit = input_value_dict['cost_unit']
+    cost_of_instock_storage = input_value_dict['cost_instock']
+    execution_results = start_build(days, input_value_dict)
+    plot_graph = build_plot_graph(execution_results)
     print(plot_graph)
+    gather_metrics = calculations.Calculations(total_days=days, results=execution_results,
+                                               delay_cost=cost_of_delay_per_unit, unit_cost=cost_of_unit,
+                                               storage_cost=cost_of_instock_storage).gather_all_metrics()
+    print(gather_metrics)
