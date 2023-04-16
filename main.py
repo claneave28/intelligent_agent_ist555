@@ -97,8 +97,8 @@ if __name__ == '__main__':
     cost_of_instock_storage = input_value_dict['cost_instock']
     execution_results = start_build(days, input_value_dict)
     plot_graph = build_plot_graph(execution_results)
-    print(plot_graph)
+    print(f"\n{plot_graph}")
     gather_metrics = calculations.Calculations(total_days=days, results=execution_results,
                                                delay_cost=cost_of_delay_per_unit, unit_cost=cost_of_unit,
                                                storage_cost=cost_of_instock_storage).gather_all_metrics()
-    print(gather_metrics)
+    print(f"\n{gather_metrics}")
