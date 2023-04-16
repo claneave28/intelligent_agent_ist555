@@ -1,0 +1,15 @@
+{
+  "cost_delayed": 2,
+  "cost_instock": 4,
+  "cost_unit": 5,
+  "store_shipping": 12,
+  "warehouse_shipping": 10,
+  "manufacturer_shipping": 11,
+  "starting_store": 3745,
+  "starting_warehouse": 490,
+  "starting_manufacturer": 5066,
+  "reorder_store": 39,
+  "reorder_warehouse": 224,
+  "shipping_failure": 1,
+  "customer_demand": 98
+}
