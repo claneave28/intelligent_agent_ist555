@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Global Classes &mdash; ist555 v1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="IST 555 Final Project" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ist555
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Code Wiki</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Global Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-global_classes.computations">Computations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global_classes.computations.Calculations"><code class="docutils literal notranslate"><span class="pre">Calculations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-global_classes.data_builder">Data Builder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global_classes.data_builder.DataExecutor"><code class="docutils literal notranslate"><span class="pre">DataExecutor</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ist555</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Python Global Classes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/python.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python-global-classes">
+<h1>Python Global Classes<a class="headerlink" href="#python-global-classes" title="Permalink to this heading"></a></h1>
+<section id="module-global_classes.computations">
+<span id="computations"></span><h2>Computations<a class="headerlink" href="#module-global_classes.computations" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="global_classes.computations.Calculations">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">global_classes.computations.</span></span><span class="sig-name descname"><span class="pre">Calculations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total_days</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_cost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.computations.Calculations" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The summary line for class of Calculations</p>
+<p>In this class, we initialize on using Attributes directly tied into impact to JIT vs On Demand(see __init__ method below).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.computations.Calculations.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total_days</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_cost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.computations.Calculations.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Class __init__ method.</p>
+<p>Class initialization to capture required attributes to do test runs and executions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>results</strong> – Dictionary of results to test against.</p></li>
+<li><p><strong>total_days</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code> required) – Total execution attempts to run</p></li>
+<li><p><strong>delay_cost</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, required) – Cost of a delayed unit</p></li>
+<li><p><strong>unit_cost</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, required) – Cost of a unit being sold</p></li>
+<li><p><strong>storage_cost</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, required) – Cost of a unit being stored over time</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.computations.Calculations.determine_average_customer_order">
+<span class="sig-name descname"><span class="pre">determine_average_customer_order</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.computations.Calculations.determine_average_customer_order" title="Permalink to this definition"></a></dt>
+<dd><p>Module</p>
+<p>This function uses defined init variable of customer demand to find the average demand throughout the test</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Returns float value of the average customer order per day of the test</p>
+<p>The return type is a float</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section contains a singular float value out to two decimal places
+including literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;average_customer_order&#39;</span><span class="p">:</span> <span class="nb">float</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.computations.Calculations.determine_average_onhand_inventory">
+<span class="sig-name descname"><span class="pre">determine_average_onhand_inventory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.computations.Calculations.determine_average_onhand_inventory" title="Permalink to this definition"></a></dt>
+<dd><p>Module</p>
+<p>This function uses defined init variable of on hand inventory to find the average inventory in store throughout the test</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Returns float value of the average customer order per day of the test</p>
+<p>The return type is a float</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section contains a singular float value out to two decimal places
+including literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;average_on_hand_inventory&#39;</span><span class="p">:</span> <span class="nb">float</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.computations.Calculations.determine_cost_of_missed_sales">
+<span class="sig-name descname"><span class="pre">determine_cost_of_missed_sales</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.computations.Calculations.determine_cost_of_missed_sales" title="Permalink to this definition"></a></dt>
+<dd><p>Module</p>
+<p>This function uses defined init variable of inventory in total cost of missed sales</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Returns int value of total_cost of missed sales</p>
+<p>The return type is an int</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section contains a singular int value
+including literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;total_cost&#39;</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.computations.Calculations.determine_cost_of_storage">
+<span class="sig-name descname"><span class="pre">determine_cost_of_storage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.computations.Calculations.determine_cost_of_storage" title="Permalink to this definition"></a></dt>
+<dd><p>Module</p>
+<p>This function uses defined init variable of inventory in total cost of storage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Returns int value of total_cost of inventory</p>
+<p>The return type is an int</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section contains a singular int value
+including literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;total_cost&#39;</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.computations.Calculations.determine_total_lost_revenue">
+<span class="sig-name descname"><span class="pre">determine_total_lost_revenue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.computations.Calculations.determine_total_lost_revenue" title="Permalink to this definition"></a></dt>
+<dd><p>Module</p>
+<p>This function uses defined init variable of missed sales plus cost of storage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Returns int value of total losses based on missed sales and cost of storage</p>
+<p>The return type is an int</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section contains a singular int value
+including literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;total_missed_revenue&#39;</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.computations.Calculations.determine_total_profit">
+<span class="sig-name descname"><span class="pre">determine_total_profit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.computations.Calculations.determine_total_profit" title="Permalink to this definition"></a></dt>
+<dd><p>Module</p>
+<p>This function uses defined init variable of total units sold minus the total losses</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Returns int value of total profit after units sold gets subtracted by total losses</p>
+<p>The return type is an int</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section contains a singular int value
+including literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;total_profit&#39;</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.computations.Calculations.determine_units_value_sold">
+<span class="sig-name descname"><span class="pre">determine_units_value_sold</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.computations.Calculations.determine_units_value_sold" title="Permalink to this definition"></a></dt>
+<dd><p>Module</p>
+<p>This function uses defined init variable of inventory in total made sales to determine inventory * cost</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Returns int value of total_sales</p>
+<p>The return type is an int</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section contains a singular int value
+including literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;total_sales&#39;</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.computations.Calculations.gather_all_metrics">
+<span class="sig-name descname"><span class="pre">gather_all_metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.computations.Calculations.gather_all_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Module</p>
+<p>This function builds out the findings from the inputted variables in the agent model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>starting_store</strong> (<em>int</em>) – The overall current store inventory</p></li>
+<li><p><strong>customer_demand</strong> (<em>int</em>) – The customer demand value for desired inventory</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Returns dictionary of calculated results</p>
+<p>The return type is a dictionary that shows the overall findings based on the intelligent agent inputs</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section contains dictionary key/pair formatting,
+including literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;cost_of_storage&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="s1">&#39;units_sold_value&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="s1">&#39;determined_cost_missed_sale&#39;</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="s1">&#39;total_losses&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="s1">&#39;avg_customer_demand&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="s1">&#39;avg_store_inventory&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="s1">&#39;overall&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-global_classes.data_builder">
+<span id="data-builder"></span><h2>Data Builder<a class="headerlink" href="#module-global_classes.data_builder" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="global_classes.data_builder.DataExecutor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">global_classes.data_builder.</span></span><span class="sig-name descname"><span class="pre">DataExecutor</span></span><a class="headerlink" href="#global_classes.data_builder.DataExecutor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The summary line for class of DataExecutor</p>
+<p>In this class, we initialize on using Attributes directly to create the required data execution payloads(see __init__ method below).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.data_builder.DataExecutor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.data_builder.DataExecutor.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Class __init__ method.</p>
+<p>Class initialization to capture required attributes to do test runs and executions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list_cost_of_inventory</strong> – Predefined list of headers for inventory key values</p></li>
+<li><p><strong>list_shipping_times</strong> – Predefined list of headers for shipping times key values</p></li>
+<li><p><strong>list_of_starting_inventory</strong> – Predefined list of headers for starting inventory key values</p></li>
+<li><p><strong>list_list_of_inventory_trigger_reorders</strong> – Predefined list of headers for inventory triggering reorder key values</p></li>
+<li><p><strong>list_of_reorder_values</strong> – Predefined list of headers for inventory reorder key values</p></li>
+<li><p><strong>list_of_shipping_failure_rates</strong> – Predefined list of headers for shipping failure rates key values</p></li>
+<li><p><strong>list_of_customer_demand</strong> – Predefined list of headers for customer demand key values</p></li>
+<li><p><strong>dictionary_of_input_variables</strong> – Empty Dictionary to be appended too with results from class execution</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.data_builder.DataExecutor.build_data_points">
+<span class="sig-name descname"><span class="pre">build_data_points</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.data_builder.DataExecutor.build_data_points" title="Permalink to this definition"></a></dt>
+<dd><p>Module</p>
+<p>This function builds random data points to be used in our model for testing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Returns dictionary of random values for modeling</p>
+<p>The return type is a dictionary that shows builds the environmental variables for intelligent agent processing</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section contains dictionary key/pair formatting,
+including literal blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;cost_delayed&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;cost_instock&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;cost_unit&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;store_shipping&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;warehouse_shipping&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;manufacturer_shipping&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;starting_store&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;starting_warehouse&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;starting_manufacturer&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;reorder_store&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;reorder_warehouse&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;reorder_store_values&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;reorder_warehouse_values&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;reorder_manufacture_values&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;shipping_failure&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="s2">&quot;customer_demand&quot;</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="global_classes.data_builder.DataExecutor.randomize_input_numeric_value">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">randomize_input_numeric_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numeric_range_low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_range_high</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#global_classes.data_builder.DataExecutor.randomize_input_numeric_value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="IST 555 Final Project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, carl-laneave.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
