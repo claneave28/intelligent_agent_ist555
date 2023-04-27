@@ -39,24 +39,7 @@ class Calculations(object):
     def gather_all_metrics(self):
         """Module
 
-        Function parameters should be documented in the ``Parameters`` section.
-        The name of each parameter is required. The type and description of each
-        parameter is optional, but should be included if not obvious.
-
-        If \*args or \*\*kwargs are accepted,
-        they should be listed as ``*args`` and ``**kwargs``.
-
-        The format for a parameter is::
-
-            name : type
-                description
-
-                The description may span multiple lines. Following lines
-                should be indented to match the first line of the description.
-                The ": type" is optional.
-
-                Multiple paragraphs are supported in parameter
-                descriptions.
+        This function builds out the findings from the inputted variables in the agent model
 
         Parameters
         ----------
@@ -64,17 +47,13 @@ class Calculations(object):
             The overall current store inventory
         customer_demand : int
             The customer demand value for desired inventory
-        *args
-            Variable length argument list.
-        **kwargs
-            Arbitrary keyword arguments.
 
         Returns
         -------
         dict
             Returns dictionary of calculated results
 
-            The return type is a dictionary that can be ingested at a later time for evaluation
+            The return type is a dictionary that shows the overall findings based on the intelligent agent inputs
 
             The ``Returns`` section contains dictionary key/pair formatting,
             including literal blocks::
@@ -83,6 +62,10 @@ class Calculations(object):
                     'cost_of_storage': int,
                     'units_sold_value': int,
                     'determined_cost_missed_sale': int
+                    'total_losses': int,
+                    'avg_customer_demand': int,
+                    'avg_store_inventory': int,
+                    'overall': int,
                 }
                 """
         for key, value in self._result_payload.items():
@@ -105,16 +88,60 @@ class Calculations(object):
         self._calculated_results['total_losses'] = self.determine_total_lost_revenue()
         self._calculated_results['avg_customer_demand'] = self.determine_average_customer_order()
         self._calculated_results['avg_store_inventory'] = self.determine_average_onhand_inventory()
-        self._calculated_results['overall profit'] = self.determine_total_profit()
+        self._calculated_results['overall_profit'] = self.determine_total_profit()
         return self._calculated_results
 
     def determine_units_value_sold(self):
+        """Module
+
+        This function uses defined init variable of inventory in total made sales to determine inventory * cost
+
+        Parameters
+        ----------
+         None
+
+        Returns
+        -------
+        int
+            Returns int value of total_sales
+
+            The return type is an int
+
+            The ``Returns`` section contains a singular int value
+            including literal blocks::
+
+                {
+                    'total_sales': int
+                }
+                """
         total_sales = 0
         for inventory in self._total_made_sales:
             total_sales += inventory * self._unit_cost
         return total_sales
 
     def determine_cost_of_storage(self):
+        """Module
+
+        This function uses defined init variable of inventory in total cost of storage
+
+        Parameters
+        ----------
+         None
+
+        Returns
+        -------
+        int
+            Returns int value of total_cost of inventory
+
+            The return type is an int
+
+            The ``Returns`` section contains a singular int value
+            including literal blocks::
+
+                {
+                    'total_cost': int
+                }
+                """
         total_cost = 0
         for inventory in self._store_inventory:
             if inventory > 1:
@@ -122,19 +149,129 @@ class Calculations(object):
         return total_cost
 
     def determine_cost_of_missed_sales(self):
+        """Module
+
+        This function uses defined init variable of inventory in total cost of missed sales
+
+        Parameters
+        ----------
+         None
+
+        Returns
+        -------
+        int
+            Returns int value of total_cost of missed sales
+
+            The return type is an int
+
+            The ``Returns`` section contains a singular int value
+            including literal blocks::
+
+                {
+                    'total_cost': int
+                }
+                """
         total_cost = 0
         for inventory in self._missed_sales_requests:
             total_cost = inventory * self._delay_cost
         return total_cost
 
     def determine_total_lost_revenue(self):
+        """Module
+
+        This function uses defined init variable of missed sales plus cost of storage
+
+        Parameters
+        ----------
+         None
+
+        Returns
+        -------
+        int
+            Returns int value of total losses based on missed sales and cost of storage
+
+            The return type is an int
+
+            The ``Returns`` section contains a singular int value
+            including literal blocks::
+
+                {
+                    'total_missed_revenue': int
+                }
+                """
         return self._calculated_results['determine_cost_missed_sale'] + self._calculated_results['cost_of_storage']
 
     def determine_total_profit(self):
+        """Module
+
+        This function uses defined init variable of total units sold minus the total losses
+
+        Parameters
+        ----------
+         None
+
+        Returns
+        -------
+        int
+            Returns int value of total profit after units sold gets subtracted by total losses
+
+            The return type is an int
+
+            The ``Returns`` section contains a singular int value
+            including literal blocks::
+
+                {
+                    'total_profit': int
+                }
+                """
         return self._calculated_results['units_sold_value'] - self._calculated_results['total_losses']
 
     def determine_average_customer_order(self):
+        """Module
+
+        This function uses defined init variable of customer demand to find the average demand throughout the test
+
+        Parameters
+        ----------
+         None
+
+        Returns
+        -------
+        float
+            Returns float value of the average customer order per day of the test
+
+            The return type is a float
+
+            The ``Returns`` section contains a singular float value out to two decimal places
+            including literal blocks::
+
+                {
+                    'average_customer_order': float
+                }
+                """
         return round(statistics.mean(self._customer_demand), 2)
 
     def determine_average_onhand_inventory(self):
+        """Module
+
+        This function uses defined init variable of on hand inventory to find the average inventory in store throughout the test
+
+        Parameters
+        ----------
+         None
+
+        Returns
+        -------
+        float
+            Returns float value of the average customer order per day of the test
+
+            The return type is a float
+
+            The ``Returns`` section contains a singular float value out to two decimal places
+            including literal blocks::
+
+                {
+                    'average_on_hand_inventory': float
+                }
+                """
         return round(statistics.mean(self._store_inventory), 2)
