@@ -21,7 +21,7 @@ def build_data_payload(payload):
         input_values = json.load(file)
     return input_values
 
-# Executor to start he actual build
+# Executor to start the actual build
 def start_build(days, payload, model):
     print("Executing testing on variables:\n")
     print(json.dumps(payload, indent=4, sort_keys=True))
