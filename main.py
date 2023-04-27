@@ -12,7 +12,7 @@ execution_results_standard = collections.defaultdict(dict)
 execution_results_jit = collections.defaultdict(dict)
 result_field_headers = ['starting_store', 'starting_warehouse', 'starting_manufacturer', 'customer_demand']
 
-
+# Read the payload from the json file if predetermined data points are being defined.
 def build_data_payload(payload):
     if payload:
         input_values = inputs.DataExecutor().build_data_points()
@@ -21,7 +21,7 @@ def build_data_payload(payload):
         input_values = json.load(file)
     return input_values
 
-
+# Executor to start he actual build
 def start_build(days, payload, model):
     print("Executing testing on variables:\n")
     print(json.dumps(payload, indent=4, sort_keys=True))
@@ -33,7 +33,7 @@ def start_build(days, payload, model):
         print("Invalid selection on model, exiting program")
         sys.exit(1)
 
-
+# Build out the json payload for plot ingestion for the JIT method of ordering inventory
 def build_jit_data(days, payload):
     max_demand = payload['customer_demand']
     reorder_store_quantity = payload['reorder_store_values']
@@ -102,7 +102,7 @@ def build_jit_data(days, payload):
                     execution_results_jit[day + 1].update({key: value})
     return execution_results_jit
 
-
+# Build out the data required to test using the standard ordering process
 def build_standard_data(days, payload):
     max_demand = payload['customer_demand']
     reorder_store_quantity = payload['reorder_store_values']
@@ -154,15 +154,15 @@ def build_standard_data(days, payload):
                     execution_results_standard[day + 1].update({key: value})
     return execution_results_standard
 
-
+# Handle the removal of inventory based on demand and orders
 def inventory_processing(inventory, inventory_removed):
     return inventory - inventory_removed
 
-
+# Create a random customer demand
 def random_customer_demand(max_demand):
     return random.randint(0, max_demand)
 
-
+# Builds a plot graph using the raw data to show the patterns
 def build_plot_graph(results, execution_results):
     df = pd.DataFrame.from_dict(results)
     df.describe().to_csv("test_results_"+str(execution_results)+".csv")
@@ -170,11 +170,15 @@ def build_plot_graph(results, execution_results):
     plt.plot(df)
     plt.show()
     return df
+
+# Builds a CSV from the raw plot data for ingestion into tools such as orange
 def create_csv_from_plot_data(results, type):
     with open('rawdata_'+str(type)+'.csv', 'w') as csvfile:
         for key in results.keys():
             csvfile.write("%s,%s\n"%(key,results[key]))
 
+# Main executor, input variables of days and build data payload will directly impact the results of the tests and execution rates
+# See README.MD for more information
 if __name__ == '__main__':
     execution_results = 0
     days = 15
