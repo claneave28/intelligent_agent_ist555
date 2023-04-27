@@ -189,6 +189,7 @@ if __name__ == '__main__':
     execution_results_standard = start_build(days, input_value_dict, 'standard')
     execution_results_jit = start_build(days, input_value_dict, 'jit')
     create_csv_from_plot_data(execution_results_jit, "jit")
+    create_csv_from_plot_data(execution_results_standard, "standard")
     for execution in execution_results_jit,execution_results_standard:
         plot_graph = build_plot_graph(execution, execution_results)
         execution_results += 1
