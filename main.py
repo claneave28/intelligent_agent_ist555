@@ -1,3 +1,4 @@
+import csv
 import random
 import global_classes.computations as calculations
 import pandas as pd
@@ -162,15 +163,20 @@ def random_customer_demand(max_demand):
     return random.randint(0, max_demand)
 
 
-def build_plot_graph(results):
+def build_plot_graph(results, execution_results):
     df = pd.DataFrame.from_dict(results)
+    df.describe().to_csv("test_results_"+str(execution_results)+".csv")
     df.style.set_caption('Model Results')
     plt.plot(df)
     plt.show()
     return df
-
+def create_csv_from_plot_data(results, type):
+    with open('rawdata_'+str(type)+'.csv', 'w') as csvfile:
+        for key in results.keys():
+            csvfile.write("%s,%s\n"%(key,results[key]))
 
 if __name__ == '__main__':
+    execution_results = 0
     days = 15
     input_value_dict = build_data_payload(True)
     cost_of_delay_per_unit = input_value_dict['cost_delayed']
@@ -178,8 +184,10 @@ if __name__ == '__main__':
     cost_of_instock_storage = input_value_dict['cost_instock']
     execution_results_standard = start_build(days, input_value_dict, 'standard')
     execution_results_jit = start_build(days, input_value_dict, 'jit')
+    create_csv_from_plot_data(execution_results_jit, "jit")
     for execution in execution_results_jit,execution_results_standard:
-        plot_graph = build_plot_graph(execution)
+        plot_graph = build_plot_graph(execution, execution_results)
+        execution_results += 1
         print(f"\n{plot_graph}")
         gather_metrics = calculations.Calculations(total_days=days, results=execution,
                                                    delay_cost=cost_of_delay_per_unit, unit_cost=cost_of_unit,
