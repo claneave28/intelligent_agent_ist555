@@ -20,6 +20,10 @@ Users can also view plot modeling on execution using the python library pandas a
 
 To run this project, you have two options for declarative constructs as far as options.
 
+`days` - This int variable determines the total execution runs you want to make
+
+* days (int) - The script will execute the test nth times based on the value of days
+
 `Build_data_payload` - This boolean determines if you want to dynamically create the variables or define your own.
 
 * True (boolean) - The script will build out the payload of data for you dynamically
