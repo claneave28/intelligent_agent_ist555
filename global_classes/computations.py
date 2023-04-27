@@ -4,42 +4,26 @@ import statistics
 class Calculations(object):
     """The summary line for class of Calculations
 
-    In this class, we initialize on using Attributes directly tied into (see __init__ method below).
-
-    Properties created with the ``@property`` decorator should be documented
-    in the property's getter method.
-
-    Attributes
-    ----------
-    attr1 : str
-        Description of `attr1`.
-    attr2 : :obj:`int`, optional
-        Description of `attr2`.
+    In this class, we initialize on using Attributes directly tied into impact to JIT vs On Demand(see __init__ method below).
 
     """
     def __init__(self, total_days, results, delay_cost, unit_cost, storage_cost):
-        """Example of docstring on the __init__ method.
+        """Class __init__ method.
 
-        The __init__ method may be documented in either the class level
-        docstring, or as a docstring on the __init__ method itself.
-
-        Either form is acceptable, but the two should not be mixed. Choose one
-        convention to document the __init__ method and be consistent with it.
-
-        Note
-        ----
-        Do not include the `self` parameter in the ``Parameters`` section.
+        Class initialization to capture required attributes to do test runs and executions
 
         Parameters
         ----------
-        param1 : str
-            Description of `param1`.
-        param2 : :obj:`list` of :obj:`str`
-            Description of `param2`. Multiple
-            lines are supported.
-        param3 : :obj:`int`, optional
-            Description of `param3`.
-
+        results : :obj: 'json', required
+            Dictionary of results to test against.
+        total_days : :obj:`int` required
+            Total execution attempts to run
+        delay_cost : :obj:`int`, required
+            Cost of a delayed unit
+        unit_cost : :obj:`int`, required
+            Cost of a unit being sold
+        storage_cost : :obj:`int`, required
+            Cost of a unit being stored over time
         """
         self._result_payload = results
         self._total_days = total_days
@@ -76,10 +60,10 @@ class Calculations(object):
 
         Parameters
         ----------
-        param1 : int
-            The first parameter.
-        param2 : :obj:`str`, optional
-            The second parameter.
+        starting_store : int
+            The overall current store inventory
+        customer_demand : int
+            The customer demand value for desired inventory
         *args
             Variable length argument list.
         **kwargs
@@ -87,19 +71,18 @@ class Calculations(object):
 
         Returns
         -------
-        bool
-            True if successful, False otherwise.
+        dict
+            Returns dictionary of calculated results
 
-            The return type is not optional. The ``Returns`` section may span
-            multiple lines and paragraphs. Following lines should be indented to
-            match the first line of the description.
+            The return type is a dictionary that can be ingested at a later time for evaluation
 
-            The ``Returns`` section supports any reStructuredText formatting,
+            The ``Returns`` section contains dictionary key/pair formatting,
             including literal blocks::
 
                 {
-                    'param1': param1,
-                    'param2': param2
+                    'cost_of_storage': int,
+                    'units_sold_value': int,
+                    'determined_cost_missed_sale': int
                 }
                 """
         for key, value in self._result_payload.items():

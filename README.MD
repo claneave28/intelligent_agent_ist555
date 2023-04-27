@@ -1,14 +1,13 @@
 
-# IST 555 - Intelligent Agents
+# IST 555 - Intelligent Agents  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
-A brief description of what this project does and who it's for
+In this project, the team works to run against multiple agent simulations to determine which method of store inventory  and selling makes the most sense.  
+Included in this project is the evaluation of JIT (Just in time) vs Repeatable static order patterns.  The variance and model also includes distribution to shipping, random customer demand and cost associations to both lost customers or too much stock.
+The code itself will print out the results of the executions as well as provide a CSV at the root level with the data. 
+
+Users can also view plot modeling on execution using the python library pandas and matplotlib.
 
 
-
-
-
-
-Made using: ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 ## Authors
 
